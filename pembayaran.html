@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pembayaran</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f9;
+        }
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .form-group small {
+            display: block;
+            margin-top: 5px;
+            color: #555;
+        }
+        .btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Formulir Pembayaran</h2>
+        <div class="form-group">
+            <label for="idPemain">ID Pemain</label>
+            <input type="text" id="idPemain" placeholder="Contoh: 123456789" required>
+            <small>Masukkan ID pemain Anda.</small>
+        </div>
+        <div class="form-group">
+            <label for="serverPemain">Server Pemain</label>
+            <input type="text" id="serverPemain" placeholder="Contoh: Asia" required>
+            <small>Masukkan server pemain Anda.</small>
+        </div>
+        <div class="form-group">
+            <label for="jumlahPembelian">Total Diamond Yang di Beli</label>
+            <input type="number" id="jumlahPembelian" placeholder="Contoh: 100" required>
+        </div>
+        <div class="form-group">
+            <label for="kodePromo">Kode Promo</label>
+            <input type="text" id="kodePromo" placeholder="Masukkan kode promo jika ada">
+        </div>
+        <div class="form-group">
+            <label for="emailPembeli">Email</label>
+            <input type="email" id="emailPembeli" placeholder="Contoh: email@example.com" required>
+        </div>
+        <div class="form-group">
+            <label for="nomorHp">Nomor HP</label>
+            <input type="tel" id="nomorHp" placeholder="Contoh: 08123456789" required>
+        </div>
+        <button class="btn" id="submitBtn">Kirim ke WhatsApp</button>
+    </div>
+
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function () {
+            const idPemain = document.getElementById('idPemain').value;
+            const serverPemain = document.getElementById('serverPemain').value;
+            const jumlahPembelian = document.getElementById('jumlahPembelian').value;
+            const kodePromo = document.getElementById('kodePromo').value;
+            const emailPembeli = document.getElementById('emailPembeli').value;
+            const nomorHp = document.getElementById('nomorHp').value;
+
+            // Validasi data yang wajib diisi
+            if (!idPemain || !serverPemain || !jumlahPembelian || !emailPembeli || !nomorHp) {
+                alert('Harap isi semua data yang wajib!');
+                return;
+            }
+
+            // Format pesan yang akan dikirim ke WhatsApp
+            const pesan = `
+Halo Admin,
+Saya ingin melakukan pembelian Diamond:
+- ID Pemain: ${idPemain}
+- Server: ${serverPemain}
+- Jumlah Pembelian: ${jumlahPembelian}
+- Kode Promo: ${kodePromo || 'Tidak ada'}
+- Email: ${emailPembeli}
+- Nomor HP: ${nomorHp}
+Terima kasih!
+            `.trim();
+
+            // Nomor admin yang dituju (gunakan format internasional)
+            const nomorAdmin = '62085664288425';
+            // Membuat URL untuk mengirim pesan ke WhatsApp
+            const waLink = `https://wa.me/${nomorAdmin}?text=${encodeURIComponent(pesan)}`;
+
+            // Kirim pesan ke WhatsApp
+            window.open(waLink, '_blank');
+        });
+    </script>
+</body>
+</html>

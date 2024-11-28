@@ -1,0 +1,48 @@
+/* Styling untuk kotak dengan border hitam */
+body, ul, li {
+    list-style: none; /* Menghilangkan bullet point */
+}
+
+.navbar{
+    width: auto;           /* Lebar kotak */
+    height: auto;           /* Tinggi menyesuaikan isi */
+    padding: 5px;          /* Ruang di dalam kotak */
+    /* border: 2px solid black; Border hitam */
+    text-align: center;     /* Teks di tengah secara horizontal */
+    font-size: 20px;        /* Ukuran font */
+    margin: 20px auto;      /* Kotak berada di tengah halaman */
+    border-radius: 10px;     /* Opsional: Membuat sudut sedikit melengkung */
+    background-color: #ff6c2c;  /*warna bg*/
+}
+
+
+.nav-list {
+    display: flex; /* Membuat item navbar sejajar */
+    justify-content: flex-end; /* Memindahkan item ke kanan */
+    align-items: center;
+}
+
+.nav-list li {
+    margin-right: 50px; /* Jarak antar item */
+    border: 2px solid black;
+    background-color: orangered;
+    padding: 5px;
+    border-radius: 13px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Tambahkan bayangan */
+
+}
+
+.nav-list a {
+    text-decoration: none; /* Menghilangkan garis bawah tautan */
+    color: black; /* Warna teks */
+    font-size: 16px; /* Ukuran teks */
+    transition: color 0.4s; /* Animasi saat hover */
+    font-weight: bold; /* Membuat teks tebal */
+    body, ul, li {
+    list-style: none; /* Menghilangkan bullet point */
+}
+}
+
+.nav-list a:hover {
+    color: aquamarine; /* Warna teks saat hover */
+}
