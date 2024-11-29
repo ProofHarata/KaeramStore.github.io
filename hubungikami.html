@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami - Kaeram Store</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #4CAF50, #81C784);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .contact-card {
+            background: #fff;
+            color: #333;
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+        }
+        .contact-card h1 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        .contact-card p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        .whatsapp-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 1.1em;
+            color: #fff;
+            background: #25D366;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        .whatsapp-btn i {
+            margin-right: 8px;
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9em;
+            color: #fff;
+        }
+        footer a {
+            color: #81C784;
+            text-decoration: none;
+        }
+        /* Background Bubble Effect */
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 8s infinite ease-in-out;
+            mix-blend-mode: overlay;
+        }
+        .bubble:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-duration: 6s;
+        }
+        .bubble:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            left: 70%;
+            animation-duration: 10s;
+        }
+        .bubble:nth-child(3) {
+            width: 120px;
+            height: 120px;
+            top: 80%;
+            left: 30%;
+            animation-duration: 12s;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+    <div class="contact-card">
+        <h1>Hubungi Kami</h1>
+        <p>Butuh bantuan atau memiliki pertanyaan? Klik tombol di bawah untuk langsung terhubung dengan kami melalui WhatsApp!</p>
+        <a href="https://wa.me/62085664288425" class="whatsapp-btn">
+            <i>📞</i> Hubungi via WhatsApp
+        </a>
+    </div>
+    <footer>
+        <p>&copy; 2024 Kaeram Store. Semua Hak Dilindungi. <a href="https://kaeramstore.com">Website Resmi</a></p>
+    </footer>
+</body>
+</html>
